@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Z Sign Language Recognition</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- MediaPipe Hands dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>A-Z Sign Language Translator</h1>
+            <p>Show your hand gestures (A-Z) in front of the camera.</p>
+        </header>
+
+        <main class="main-content">
+            <div class="camera-section">
+                <div class="video-container">
+                    <video id="input_video" class="input_video" autoplay playsinline></video>
+                    <canvas id="output_canvas" class="output_canvas" width="640" height="480"></canvas>
+                </div>
+                <div class="controls">
+                     <button id="startBtn">Start Translation</button>
+                     <button id="stopBtn" class="secondary" disabled>Stop</button>
+                </div>
+                <div id="status" class="status">Waiting to start...</div>
+            </div>
+
+            <div class="translation-section">
+                <h2>Translation</h2>
+                <div id="prediction" class="prediction-box">
+                    --
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
